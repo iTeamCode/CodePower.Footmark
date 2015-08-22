@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1895F304-3AA2-4213-99D8-8A75E7E48578}</ProjectGuid>
+    <ProjectGuid>{866AC7A8-1909-472C-8434-C31061ED4DFA}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,39 +40,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -125,6 +94,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -135,6 +108,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -146,6 +125,15 @@
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Facebook">
       <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
@@ -170,44 +158,138 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KnockoutController.cs" />
-    <Compile Include="Controllers\TestSignalRController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Runtime\ChatHub.cs" />
-    <Compile Include="JsonHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Css\bootstrap\bootstrap-overrides.css" />
+    <Content Include="Content\Css\bootstrap\bootstrap-responsive.css" />
+    <Content Include="Content\Css\bootstrap\bootstrap.css" />
+    <Content Include="Content\Css\code-editor.css" />
+    <Content Include="Content\Css\compiled\calendar.css" />
+    <Content Include="Content\Css\compiled\chart-showcase.css" />
+    <Content Include="Content\Css\compiled\elements.css" />
+    <Content Include="Content\Css\compiled\form-showcase.css" />
+    <Content Include="Content\Css\compiled\form-wizard.css" />
+    <Content Include="Content\Css\compiled\gallery.css" />
+    <Content Include="Content\Css\compiled\grids.css" />
+    <Content Include="Content\Css\compiled\index.css" />
+    <Content Include="Content\Css\compiled\new-user.css" />
+    <Content Include="Content\Css\compiled\personal-info.css" />
+    <Content Include="Content\Css\compiled\signin.css" />
+    <Content Include="Content\Css\compiled\signup.css" />
+    <Content Include="Content\Css\compiled\tables.css" />
+    <Content Include="Content\Css\compiled\ui-elements.css" />
+    <Content Include="Content\Css\compiled\user-list.css" />
+    <Content Include="Content\Css\compiled\user-profile.css" />
+    <Content Include="Content\Css\compiled\web-app-icons.css" />
+    <Content Include="Content\Css\elements.css" />
+    <Content Include="Content\Css\icons.css" />
+    <Content Include="Content\Css\layout.css" />
+    <Content Include="Content\Css\lib\bootstrap-wysihtml5.css" />
+    <Content Include="Content\Css\lib\bootstrap.datepicker.css" />
+    <Content Include="Content\Css\lib\font-awesome.css" />
+    <Content Include="Content\Css\lib\fullcalendar.css" />
+    <Content Include="Content\Css\lib\fullcalendar.print.css" />
+    <Content Include="Content\Css\lib\jquery-ui-1.10.2.custom.css" />
+    <Content Include="Content\Css\lib\morris.css" />
+    <Content Include="Content\Css\lib\select2.css" />
+    <Content Include="Content\Css\lib\uniform.default.css" />
+    <Content Include="Content\font\fontawesome-webfont.svg" />
+    <Content Include="Content\Img\bgs\10.jpg" />
+    <Content Include="Content\Img\bgs\11.jpg" />
+    <Content Include="Content\Img\bgs\7.jpg" />
+    <Content Include="Content\Img\bgs\8.jpg" />
+    <Content Include="Content\Img\bgs\9.jpg" />
+    <Content Include="Content\Img\bgs\blueish.jpg" />
+    <Content Include="Content\Img\bgs\landscape.jpg" />
+    <Content Include="Content\Img\btn-attach.png" />
+    <Content Include="Content\Img\btn-setting.png" />
+    <Content Include="Content\Img\btn-shuffle.png" />
+    <Content Include="Content\Img\btn-tool.png" />
+    <Content Include="Content\Img\contact-img.png" />
+    <Content Include="Content\Img\contact-img2.png" />
+    <Content Include="Content\Img\contact-profile.png" />
+    <Content Include="Content\Img\gallery-preview.jpg" />
+    <Content Include="Content\Img\gallery1.jpg" />
+    <Content Include="Content\Img\gallery2.jpg" />
+    <Content Include="Content\Img\gallery3.jpg" />
+    <Content Include="Content\Img\glyphicons-halflings-white.png" />
+    <Content Include="Content\Img\glyphicons-halflings.png" />
+    <Content Include="Content\Img\ico-arrow-black.png" />
+    <Content Include="Content\Img\ico-gallery-edit.png" />
+    <Content Include="Content\Img\ico-gallery-trash.png" />
+    <Content Include="Content\Img\ico-mail.png" />
+    <Content Include="Content\Img\ico-phone.png" />
+    <Content Include="Content\Img\ico-table-delete.png" />
+    <Content Include="Content\Img\ico-table-edit.png" />
+    <Content Include="Content\Img\ico-table-new.png" />
+    <Content Include="Content\Img\jquery-ui\slider-handler.png" />
+    <Content Include="Content\Img\jquery-ui\slider-handler2.png" />
+    <Content Include="Content\Img\jquery-ui\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\Img\jquery-ui\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\Img\lens.png" />
+    <Content Include="Content\Img\logo-white.png" />
+    <Content Include="Content\Img\logo.png" />
+    <Content Include="Content\Img\new-gallery-img.png" />
+    <Content Include="Content\Img\no-img-gallery.png" />
+    <Content Include="Content\Img\personal-info.png" />
+    <Content Include="Content\Img\select-bg.png" />
+    <Content Include="Content\Img\select2\select2.png" />
+    <Content Include="Content\Img\select2\select2x2.png" />
+    <Content Include="Content\Img\select2\spinner.gif" />
+    <Content Include="Content\Img\skin-nav-bullets.png" />
+    <Content Include="Content\Img\table-img.png" />
+    <Content Include="Content\Img\uniform\bg-input-focus.png" />
+    <Content Include="Content\Img\uniform\bg-input.png" />
+    <Content Include="Content\Img\uniform\sprite.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font\fontawesome-webfont_2d2816fe.eot" />
+    <Content Include="Content\font\fontawesome-webfont_51500cb8.eot" />
+    <Content Include="Content\font\fontawesome-webfont_51500cb8.ttf" />
+    <Content Include="Content\font\fontawesome-webfont_51500cb8.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
-    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\Js\bootstrap-wysihtml5-0.0.2.js" />
+    <Content Include="Scripts\Js\bootstrap.datepicker.js" />
+    <Content Include="Scripts\Js\bootstrap.min.js" />
+    <Content Include="Scripts\Js\fuelux.wizard.js" />
+    <Content Include="Scripts\Js\fullcalendar.min.js" />
+    <Content Include="Scripts\Js\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Scripts\Js\jquery.flot.js" />
+    <Content Include="Scripts\Js\jquery.flot.resize.js" />
+    <Content Include="Scripts\Js\jquery.flot.stack.js" />
+    <Content Include="Scripts\Js\jquery.knob.js" />
+    <Content Include="Scripts\Js\jquery.uniform.min.js" />
+    <Content Include="Scripts\Js\morris.min.js" />
+    <Content Include="Scripts\Js\select2.min.js" />
+    <Content Include="Scripts\Js\theme.js" />
+    <Content Include="Scripts\Js\wysihtml5-0.3.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -237,11 +319,8 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\List.cshtml" />
-    <Content Include="Views\Employee\Detail.cshtml" />
-    <Content Include="Views\Knockout\index.cshtml" />
-    <Content Include="Views\TestSignalR\Chat.cshtml" />
+    <Content Include="Views\Shared\_BaseLayout.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -250,16 +329,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="packages.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dashboard.DataService\Dashboard.DataService.csproj">
-      <Project>{2e4339db-8ee6-4d75-bcb3-dfe3b30f1e43}</Project>
-      <Name>Dashboard.DataService</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -277,7 +348,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>42011</DevelopmentServerPort>
+          <DevelopmentServerPort>56211</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:42011/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

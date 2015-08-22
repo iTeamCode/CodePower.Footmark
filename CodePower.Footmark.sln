@@ -20,8 +20,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.BizLayer", "02.BizLayer"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.ServiceLayer", "03.ServiceLayer", "{F56A497C-C24E-4145-ACE5-EB7FE1B884E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard.DataService", "Dashboard.DataService\Dashboard.DataService.csproj", "{2E4339DB-8EE6-4D75-BCB3-DFE3B30F1E43}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.Model", "06.Model", "{E8DFC088-12C8-49FE-90D0-787D6497CA3B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Framework.AOP", "CodePower.Framework\CodePower.Framework.AOP\CodePower.Framework.AOP.csproj", "{CCCB0994-56E6-479D-8940-4DD5773E7446}"
@@ -29,8 +27,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Framework.DataAccess", "CodePower.Framework\CodePower.Framework.DataAccess\CodePower.Framework.DataAccess.csproj", "{E5992C2A-FE50-4EE3-959C-25638DD9A3C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Framework.Web", "CodePower.Framework\CodePower.Framework.Web\CodePower.Framework.Web.csproj", "{BE236063-BA72-4C83-B6A8-58371C902A0F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Footmark.WebPortal", "CodePower.Footmark.WebPortal\CodePower.Footmark.WebPortal.csproj", "{1895F304-3AA2-4213-99D8-8A75E7E48578}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Footmark.BizFacade", "CodePower.Footmark.BizFacade\CodePower.Footmark.BizFacade.csproj", "{99080A69-7B70-48F5-9DEE-54F89FCDCCA4}"
 EndProject
@@ -44,16 +40,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Footmark.Model", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Footmark.XUnitTest", "CodePower.Footmark.XUnitTest\CodePower.Footmark.XUnitTest.csproj", "{10790446-C9E7-451C-918A-6CAB1668E72B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Footmark.WebPortal", "CodePower.Footmark.WebPortal\CodePower.Footmark.WebPortal.csproj", "{866AC7A8-1909-472C-8434-C31061ED4DFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E4339DB-8EE6-4D75-BCB3-DFE3B30F1E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E4339DB-8EE6-4D75-BCB3-DFE3B30F1E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E4339DB-8EE6-4D75-BCB3-DFE3B30F1E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E4339DB-8EE6-4D75-BCB3-DFE3B30F1E43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCCB0994-56E6-479D-8940-4DD5773E7446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CCCB0994-56E6-479D-8940-4DD5773E7446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCCB0994-56E6-479D-8940-4DD5773E7446}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -66,10 +60,6 @@ Global
 		{BE236063-BA72-4C83-B6A8-58371C902A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE236063-BA72-4C83-B6A8-58371C902A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE236063-BA72-4C83-B6A8-58371C902A0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1895F304-3AA2-4213-99D8-8A75E7E48578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1895F304-3AA2-4213-99D8-8A75E7E48578}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1895F304-3AA2-4213-99D8-8A75E7E48578}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1895F304-3AA2-4213-99D8-8A75E7E48578}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99080A69-7B70-48F5-9DEE-54F89FCDCCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99080A69-7B70-48F5-9DEE-54F89FCDCCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99080A69-7B70-48F5-9DEE-54F89FCDCCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -94,6 +84,10 @@ Global
 		{10790446-C9E7-451C-918A-6CAB1668E72B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10790446-C9E7-451C-918A-6CAB1668E72B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10790446-C9E7-451C-918A-6CAB1668E72B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{866AC7A8-1909-472C-8434-C31061ED4DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{866AC7A8-1909-472C-8434-C31061ED4DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{866AC7A8-1909-472C-8434-C31061ED4DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{866AC7A8-1909-472C-8434-C31061ED4DFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,8 +96,7 @@ Global
 		{CCCB0994-56E6-479D-8940-4DD5773E7446} = {C61C6E32-4892-4A94-AF03-E7CD3A9FEEAF}
 		{E5992C2A-FE50-4EE3-959C-25638DD9A3C9} = {C61C6E32-4892-4A94-AF03-E7CD3A9FEEAF}
 		{BE236063-BA72-4C83-B6A8-58371C902A0F} = {C61C6E32-4892-4A94-AF03-E7CD3A9FEEAF}
-		{2E4339DB-8EE6-4D75-BCB3-DFE3B30F1E43} = {ACBF217B-2BD4-4024-9C5D-4DD3ECBD7E78}
-		{1895F304-3AA2-4213-99D8-8A75E7E48578} = {ACBF217B-2BD4-4024-9C5D-4DD3ECBD7E78}
+		{866AC7A8-1909-472C-8434-C31061ED4DFA} = {ACBF217B-2BD4-4024-9C5D-4DD3ECBD7E78}
 		{10790446-C9E7-451C-918A-6CAB1668E72B} = {20C6EB37-553B-4525-9CD5-E657D1EFDCC0}
 		{4F4B8153-4F05-4112-B82A-6E9168A56736} = {F63BC442-14FB-4279-A1E6-98C5DF87537F}
 		{99080A69-7B70-48F5-9DEE-54F89FCDCCA4} = {AA241DD5-4BAE-4AC9-BA7B-FC05EF36FE2D}
