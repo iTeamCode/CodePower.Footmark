@@ -65,7 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodePower.Framework.Common\CodePower.Framework.Common.csproj">
+    <ProjectReference Include="..\CodePower.Framework\CodePower.Framework.Common\CodePower.Framework.Common.csproj">
       <Project>{c8527e0b-dbbe-4f5d-beb3-46b7351676b2}</Project>
       <Name>CodePower.Framework.Common</Name>
     </ProjectReference>

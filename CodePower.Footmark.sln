@@ -42,7 +42,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Footmark.XUnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Footmark.WebPortal", "CodePower.Footmark.WebPortal\CodePower.Footmark.WebPortal.csproj", "{866AC7A8-1909-472C-8434-C31061ED4DFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Framework.Common", "CodePower.Framework.Common\CodePower.Framework.Common.csproj", "{C8527E0B-DBBE-4F5D-BEB3-46B7351676B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePower.Framework.Common", "CodePower.Framework\CodePower.Framework.Common\CodePower.Framework.Common.csproj", "{C8527E0B-DBBE-4F5D-BEB3-46B7351676B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
