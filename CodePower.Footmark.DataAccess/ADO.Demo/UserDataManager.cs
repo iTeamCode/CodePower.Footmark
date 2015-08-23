@@ -13,7 +13,7 @@ namespace CodePower.Footmark.DataAccess
         [DataMapping("ID", System.Data.DbType.Int16)]
         public int ID { get; set; }
     }
-    public class UserDataManager
+    public class DemoDataManager
     {
         private static DataManager _dataManager = DataManagerFactory.CreateDataManager(DataBaseType.SQLServer);
 

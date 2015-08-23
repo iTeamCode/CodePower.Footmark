@@ -22,7 +22,7 @@
 
     <!-- this page specific styles -->
     <link rel="stylesheet" href="~/Content/Css/compiled/index.css" type="text/css" media="screen" />
-
+    @RenderSection("cssStyles", required: false)
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
@@ -35,7 +35,10 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="brand" href="index.html"><img src="~/Content/Img/logo.png" /></a>
+            <a class="brand" href="index.html"><img style="width:21px;height:21px;" src="~/Content/Img/logo.png" />
+                <span style="text-transform:none;">CodePower - Footmark</span>
+            </a>
+            
 
             <ul class="nav pull-right">
                 <li class="hidden-phone">
@@ -161,15 +164,15 @@
                     <div class="arrow"></div>
                     <div class="arrow_border"></div>
                 </div>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <span>Home</span>
+                <a href="#">
+                    <i class="icon-dashboard"></i>
+                    <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="chart-showcase.html">
+                <a href="#">
                     <i class="icon-signal"></i>
-                    <span>Charts</span>
+                    <span>Report</span>
                 </a>
             </li>
             <li>
@@ -179,69 +182,62 @@
                     <i class="icon-chevron-down"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="user-list.html">User list</a></li>
-                    <li><a href="new-user.html">New user form</a></li>
-                    <li><a href="user-profile.html">User profile</a></li>
+                    <li><a href="#">User list</a></li>
+                    <li><a href="#">New user form</a></li>
+                    <li><a href="#">User profile</a></li>
                 </ul>
             </li>
             <li>
                 <a class="dropdown-toggle" href="#">
                     <i class="icon-edit"></i>
-                    <span>Forms</span>
+                    <span>Test Activity</span>
                     <i class="icon-chevron-down"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="form-showcase.html">Form showcase</a></li>
-                    <li><a href="form-wizard.html">Form wizard</a></li>
+                    <li><a href="#">Form showcase</a></li>
+                    <li><a href="#">Form wizard</a></li>
                 </ul>
             </li>
             <li>
-                <a href="gallery.html">
-                    <i class="icon-picture"></i>
-                    <span>Gallery</span>
+                <a href="#">
+                    <i class="icon-beaker"></i>
+                    <span>Test Case</span>
                 </a>
             </li>
             <li>
-                <a href="calendar.html">
+                <a href="#">
                     <i class="icon-calendar-empty"></i>
                     <span>Calendar</span>
                 </a>
             </li>
             <li>
-                <a href="tables.html">
+                <a href="#">
                     <i class="icon-th-large"></i>
-                    <span>Tables</span>
+                    <span>Area</span>
                 </a>
             </li>
             <li>
                 <a class="dropdown-toggle ui-elements" href="#">
                     <i class="icon-code-fork"></i>
-                    <span>UI Elements</span>
+                    <span>Test History</span>
                     <i class="icon-chevron-down"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="ui-elements.html">UI Elements</a></li>
-                    <li><a href="icons.html">Icons</a></li>
+                    <li><a href="#">UI Elements</a></li>
+                    <li><a href="#">Icons</a></li>
                 </ul>
             </li>
             <li>
-                <a href="personal-info.html">
+                <a href="#">
                     <i class="icon-cog"></i>
                     <span>My Info</span>
                 </a>
             </li>
             <li>
-                <a class="dropdown-toggle" href="#">
+                <a href="#">
                     <i class="icon-share-alt"></i>
-                    <span>Extras</span>
-                    <i class="icon-chevron-down"></i>
+                    <span>Exit</span>
                 </a>
-                <ul class="submenu">
-                    <li><a href="code-editor.html">Code editor</a></li>
-                    <li><a href="grids.html">Grids</a></li>
-                    <li><a href="signin.html">Sign in</a></li>
-                    <li><a href="signup.html">Sign up</a></li>
-                </ul>
             </li>
         </ul>
     </div>
@@ -272,5 +268,6 @@
 
     <!-- sub meun -->
     <script src="~/Scripts/Js/theme.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

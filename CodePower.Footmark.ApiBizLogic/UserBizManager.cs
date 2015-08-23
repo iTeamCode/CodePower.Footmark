@@ -12,7 +12,7 @@ namespace CodePower.Footmark.ApiBizLogic
         public static bool AuthenticateUser(int churchId, string name, string pwd)
         {
             //some logic code here.
-            return UserDataManager.AuthenticateUser(churchId, name, pwd);
+            return DemoDataManager.AuthenticateUser(churchId, name, pwd);
         }
     }
 }
