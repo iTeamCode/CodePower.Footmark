@@ -31,7 +31,7 @@ namespace CodePower.Footmark.DataAccess
             {
                 isPass = Convert.ToBoolean(command.ExecuteCommandScalar());
             }
-            catch (Exception ex)
+            catch
             {
                 //Log here.
             }
