@@ -39,6 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContractModel\AuthCM.cs" />
+    <Compile Include="ContractModel\SignInCM.cs" />
+    <Compile Include="DomainModel\AuthConsumerDM.cs" />
+    <Compile Include="DomainModel\AuthTokenDM.cs" />
+    <Compile Include="DomainModel\CurrentUserDM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

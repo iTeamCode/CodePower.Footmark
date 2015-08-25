@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CodePower.Footmark.ApiBizLogic.Auth.FootmarkAuthenticationCreator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Auth\AuthenticationCreator\FootmarkAuthenticationCreator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CodePower.Footmark.ApiBizLogic.Auth.NoAuthorizationCreator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Auth\AuthorizationCreator\NoAuthorizationCreator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CodePower.Footmark.ApiBizLogic.Auth.AuthUserFactory">
+    <Position X="2.25" Y="2.25" Width="2.5" />
+    <AssociationLine Name="_authorizationCreator" Type="CodePower.Footmark.ApiBizLogic.Auth.IUserAuthorizationCreator" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="2.938" />
+        <Point X="5.152" Y="2.938" />
+        <Point X="5.152" Y="1.781" />
+        <Point X="7" Y="1.781" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.177" Y="0.11" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_userInfoCreator" Type="CodePower.Footmark.ApiBizLogic.Auth.IUserInfomationCreator" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="4.312" />
+        <Point X="5.125" Y="4.312" />
+        <Point X="5.125" Y="5.531" />
+        <Point X="7" Y="5.531" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.46" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_consumer" Type="CodePower.Footmark.ApiBizLogic.Auth.ConsumerApp">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="0.183" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAEAAQIAAAAAAAAAAAAICAAACAAQIAg=</HashCode>
+      <FileName>Auth\Factory\AuthUserFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="_authenticationCreator" />
+      <Property Name="_authorizationCreator" />
+      <Property Name="_userInfoCreator" />
+      <Property Name="_consumer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CodePower.Footmark.ApiBizLogic.Auth.FootmarkAuthUserFactory">
+    <Position X="0.5" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAIAAAAAAAAAAg=</HashCode>
+      <FileName>Auth\Factory\FootmarkAuthUserFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodePower.Footmark.ApiBizLogic.Auth.ManagerReportAuthUserFactory">
+    <Position X="4" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAIAAAAAAAAAAg=</HashCode>
+      <FileName>Auth\Factory\ManagerReportAuthUserFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodePower.Footmark.ApiBizLogic.Auth.FootmarkUserInfomationCreator" Collapsed="true">
+    <Position X="7" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Auth\UserInfomationCreator\FootmarkUserInfomationCreator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CodePower.Footmark.ApiBizLogic.Auth.AuthUser">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Auth\AuthUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodePower.Footmark.ApiBizLogic.Auth.AuthUserContext">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Auth\AuthUserContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CodePower.Footmark.ApiBizLogic.Auth.IUserAuthenticationCreator" Collapsed="true">
+    <Position X="7" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Auth\AuthenticationCreator\IUserAuthenticationCreator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CodePower.Footmark.ApiBizLogic.Auth.IUserAuthorizationCreator" Collapsed="true">
+    <Position X="7" Y="1.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Auth\AuthorizationCreator\IUserAuthorizationCreator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CodePower.Footmark.ApiBizLogic.Auth.IUserInfomationCreator" Collapsed="true">
+    <Position X="7" Y="5.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Auth\UserInfomationCreator\IUserInfomationCreator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CodePower.Footmark.ApiBizLogic.Auth.ConsumerApp">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Auth\ConsumerApp.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -39,6 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\AuthenticationCreator\FootmarkAuthenticationCreator.cs" />
+    <Compile Include="Auth\AuthenticationCreator\IUserAuthenticationCreator.cs" />
+    <Compile Include="Auth\AuthManager.cs" />
+    <Compile Include="Auth\AuthorizationCreator\IUserAuthorizationCreator.cs" />
+    <Compile Include="Auth\AuthorizationCreator\NoAuthorizationCreator.cs" />
+    <Compile Include="Auth\AuthUser.cs" />
+    <Compile Include="Auth\AuthUserContext.cs" />
+    <Compile Include="Auth\ConsumerApp.cs" />
+    <Compile Include="Auth\Factory\AuthUserFactory.cs" />
+    <Compile Include="Auth\Factory\FootmarkAuthUserFactory.cs" />
+    <Compile Include="Auth\Factory\ManagerReportAuthUserFactory.cs" />
+    <Compile Include="Auth\OAuth\IOAuth.cs" />
+    <Compile Include="Auth\OAuth\RefreshTokenFlow.cs" />
+    <Compile Include="Auth\OAuth\ResOwnerPwdCredentialsFlow.cs" />
+    <Compile Include="Auth\UserInfomationCreator\FootmarkUserInfomationCreator.cs" />
+    <Compile Include="Auth\UserInfomationCreator\IUserInfomationCreator.cs" />
     <Compile Include="UserBizManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -47,6 +63,13 @@
       <Project>{4f4b8153-4f05-4112-b82a-6e9168a56736}</Project>
       <Name>CodePower.Footmark.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CodePower.Footmark.Model\CodePower.Footmark.Model.csproj">
+      <Project>{019b4967-f85a-4fc2-a6d3-07e58ddfa83e}</Project>
+      <Name>CodePower.Footmark.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AuthFactory.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
