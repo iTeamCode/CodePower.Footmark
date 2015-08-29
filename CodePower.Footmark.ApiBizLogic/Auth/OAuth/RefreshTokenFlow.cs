@@ -62,7 +62,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             //Save and return new token.
             token.AccessToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "AccessToken");
             token.RefreshToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "RefreshToken");
-            token.ExpirationDate = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
+            token.ExpirationTime = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
             //token.LastUpdatedByUserId = 0;
             //token.LastUpdatedByUserName = "System User";
             //token.LastUpdatedDate = DateTime.Now;
@@ -72,7 +72,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             {
                 TokenType = "bearer",
                 AccessToken = token.AccessToken,
-                ExpirationDate = token.ExpirationDate.ToString(),
+                ExpirationDate = token.ExpirationTime.ToString(),
                 RefreshToken = token.RefreshToken
             };
         }

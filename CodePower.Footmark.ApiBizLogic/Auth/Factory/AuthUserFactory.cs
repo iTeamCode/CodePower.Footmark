@@ -53,7 +53,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             var context = new AuthUserContext() { AuthUserId = userId };
 
             authUser.Consumer = this._consumer;
-            authUser.User = _userInfoCreator.GetUserInfomation(context);
+            authUser.User = _userInfoCreator.GetUserInformation(context);
             context.AuthChurchId = authUser.User.ChurchId;  //set ChurchId here.
             authUser.Authorization = _authorizationCreator.GetUserAuthorization(context);
 

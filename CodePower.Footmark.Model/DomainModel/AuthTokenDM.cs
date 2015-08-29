@@ -10,21 +10,21 @@ namespace CodePower.Footmark.Model.DomainModel
     {
         #region mapping field
         /// <summary>
-        /// get or set 'AuthenticateTokenID'
+        /// get or set 'SysNo'
         /// </summary>
-        public int AuthenticateTokenID { get; set; }
+        public int SysNo { get; set; }
         /// <summary>
-        /// get or set 'AuthenticateConsumerID'
+        /// get or set 'AuthConsumerSysNo'
         /// </summary>
-        public int AuthenticateConsumerID { get; set; }
+        public int AuthConsumerSysNo { get; set; }
         /// <summary>
         /// get or set 'UserID'
         /// </summary>
-        public int UserID { get; set; }
+        public int UserSysNo { get; set; }
         /// <summary>
         /// get or set 'type' (0 is Dashboard)
         /// </summary>
-        public int Type { get; set; }
+        public int TypeId { get; set; }
         /// <summary>
         /// get or set 'access token'
         /// </summary>
@@ -38,9 +38,9 @@ namespace CodePower.Footmark.Model.DomainModel
         /// </summary>
         public string ConfusionCode { get; set; }
         /// <summary>
-        /// get or set 'Expiration Date'
+        /// get or set 'Expiration Time'
         /// </summary>
-        public DateTime ExpirationDate { get; set; }
+        public DateTime ExpirationTime { get; set; }
         /// <summary>
         /// get or set 'Expiration Interval'
         /// </summary>

@@ -17,6 +17,6 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
         /// </summary>
         /// <param name="context">context object</param>
         /// <returns>current user</returns>
-        CurrentUserDM GetUserInfomation(AuthUserContext context);
+        CurrentUserDM GetUserInformation(AuthUserContext context);
     }
 }

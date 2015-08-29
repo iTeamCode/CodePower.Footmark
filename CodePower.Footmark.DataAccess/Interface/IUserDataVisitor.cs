@@ -34,5 +34,23 @@ namespace CodePower.Footmark.DataAccess
         /// <param name="token">token</param>
         void CreateAuthToken(AuthTokenDM token);
         #endregion Authentication associated
+
+        #region User Information
+        /// <summary>
+        /// Feach user information by system no.
+        /// </summary>
+        /// <param name="sysNo">sysNo</param>
+        /// <returns>user information</returns>
+        UserInformationDM FeachUserInformation(int sysNo);
+        /// <summary>
+        /// Feach user information by user name.
+        /// </summary>
+        /// <param name="userName">user name</param>
+        /// <returns>user information</returns>
+        UserInformationDM FeachUserInformation(string userName);
+        #endregion User Information
+
+
+
     }
 }

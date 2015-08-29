@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CodePower.Footmark.DataAccess
 {
-    class ActivityDataVisitor : IActivityDataVisitor
+    public class ActivityDataVisitor : IActivityDataVisitor
     {
         public CurrentUserDM CurrentUser { get; set; }
     }

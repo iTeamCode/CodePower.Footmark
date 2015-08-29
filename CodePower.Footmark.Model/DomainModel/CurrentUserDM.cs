@@ -12,9 +12,9 @@ namespace CodePower.Footmark.Model.DomainModel
     public class CurrentUserDM : BaseDomainModel
     {
         /// <summary>
-        /// get or set 'user id'
+        /// get or set 'user sysno'
         /// </summary>
-        public int UserId { get; set; }
+        public int SysNo { get; set; }
         /// <summary>
         /// get or set 'church Id'
         /// </summary>

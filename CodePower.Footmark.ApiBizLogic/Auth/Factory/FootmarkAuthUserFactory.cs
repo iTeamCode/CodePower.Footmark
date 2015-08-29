@@ -13,17 +13,17 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
         #region override base class.
         protected override IUserInfomationCreator BuildUserInfomationCreator()
         {
-            throw new NotImplementedException();
+            return new FootmarkUserInfomationCreator();
         }
 
         protected override IUserAuthorizationCreator BuildUserAuthorizationCreator()
         {
-            throw new NotImplementedException();
+            return new NoAuthorizationCreator();
         }
 
         protected override IUserAuthenticationCreator BuildUserAuthenticationCreator()
         {
-            throw new NotImplementedException();
+            return new FootmarkAuthenticationCreator();
         }
         #endregion override base class.
     }

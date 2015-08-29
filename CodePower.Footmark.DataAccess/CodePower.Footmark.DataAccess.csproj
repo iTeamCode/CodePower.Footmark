@@ -63,6 +63,9 @@
     <Compile Include="Interface\IDataVisitor.cs" />
     <Compile Include="Interface\IProjectDataVisitor.cs" />
     <Compile Include="Interface\IUserDataVisitor.cs" />
+    <Compile Include="Mapping\User\AuthConsumerMap.cs" />
+    <Compile Include="Mapping\User\AuthTokenMap.cs" />
+    <Compile Include="Mapping\User\UserInformationMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,13 +83,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Mapping\Activity\" />
     <Folder Include="Mapping\Project\" />
-    <Folder Include="Mapping\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

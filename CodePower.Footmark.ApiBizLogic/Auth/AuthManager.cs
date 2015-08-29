@@ -27,12 +27,12 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             var dataVisitor = DataVisitor.Create<IUserDataVisitor>();
             AuthTokenDM authToken = dataVisitor.FetchAuthAccessToken(token);
 
-            if (authToken == null || authToken.AccessToken != token || authToken.ExpirationDate <= DateTime.Now) return authPass;
+            if (authToken == null || authToken.AccessToken != token || authToken.ExpirationTime <= DateTime.Now) return authPass;
             if (authToken.Consumer == null || !authToken.Consumer.IsEnabled) return authPass;
 
             var consumerApp = (ConsumerApp)authToken.Consumer.ConsumerAppID;
             userFactory = AuthUserFactory.CreateAuthUserFactory(consumerApp);
-            userId = authToken.UserID;
+            userId = authToken.UserSysNo;
             if (userFactory != null)
             {
                 authPass = true;

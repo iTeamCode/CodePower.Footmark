@@ -34,12 +34,12 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             var factory = AuthUserFactory.CreateAuthUserFactory((ConsumerApp)consumer.ConsumerAppID);
             var user = factory.AuthenticationUser(_model.UserName, _model.Password, _model.ChurchCode);
 
-            var token = consumer.Tokens.FirstOrDefault(x => x.UserID == user.UserId);
-            if (token != null && token.ExpirationDate < DateTime.Now)
+            var token = consumer.Tokens.FirstOrDefault(x => x.UserSysNo == user.UserSysNo);
+            if (token != null && token.ExpirationTime < DateTime.Now)
             {   //Refresh token.
                 token.AccessToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "AccessToken");
                 token.RefreshToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "RefreshToken");
-                token.ExpirationDate = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
+                token.ExpirationTime = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
                 token.UpdateUserSysNo = -1;
                 token.UpdateUserName = "System User";
                 token.UpdateTime = DateTime.Now;
@@ -49,14 +49,14 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             {   //Create Token.
                 token = new AuthTokenDM()
                 {
-                    AuthenticateConsumerID = consumer.AuthConsumerID,
+                    AuthConsumerSysNo = consumer.SysNo,
                     AccessToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "AccessToken"),
                     RefreshToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "RefreshToken"),
                     ConfusionCode = string.Empty,
-                    ExpirationDate = DateTime.Now.AddDays(1),
+                    ExpirationTime = DateTime.Now.AddDays(1),
                     ExpirationInterval = 1,
-                    UserID = user.UserId,
-                    Type = 0,
+                    UserSysNo = user.UserSysNo,
+                    TypeId = 0,
                     CreateUserSysNo = -1,
                     CreateUserName = "System User",
                     CreateTime = DateTime.Now,
@@ -71,7 +71,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             {
                 TokenType = "bearer",
                 AccessToken = token.AccessToken,
-                ExpirationDate = token.ExpirationDate.ToString(),
+                ExpirationDate = token.ExpirationTime.ToString(),
                 RefreshToken = token.RefreshToken,
                 User = user
             };

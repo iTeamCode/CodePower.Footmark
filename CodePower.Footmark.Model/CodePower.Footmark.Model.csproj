@@ -45,6 +45,7 @@
     <Compile Include="DomainModel\AuthTokenDM.cs" />
     <Compile Include="DomainModel\BaseDomainModel.cs" />
     <Compile Include="DomainModel\CurrentUserDM.cs" />
+    <Compile Include="DomainModel\UserInformationDM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

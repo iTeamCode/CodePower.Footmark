@@ -29,7 +29,7 @@ namespace CodePower.Footmark.ApiService.OAuth2
         }
         public OAuthIdentity(AuthUser authUser)
         {
-            _id = authUser.User.UserId;
+            _id = authUser.User.SysNo;
             _name = authUser.User.UserName;
             _churchId = authUser.User.ChurchId;
             _churchCode = authUser.User.ChurchCode;

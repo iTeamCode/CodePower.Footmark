@@ -9,9 +9,9 @@ namespace CodePower.Footmark.Model.DomainModel
     public class AuthConsumerDM : BaseDomainModel
     {
         /// <summary>
-        /// get or set 'AuthConsumerID'
+        /// get or set 'SysNo'
         /// </summary>
-        public int AuthConsumerID { get; set; }
+        public int SysNo { get; set; }
         /// <summary>
         /// get or set 'ConsumerAppID'
         /// </summary>
