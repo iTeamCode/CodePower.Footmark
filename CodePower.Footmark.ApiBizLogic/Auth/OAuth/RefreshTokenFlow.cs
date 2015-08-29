@@ -1,4 +1,5 @@
-﻿using CodePower.Footmark.Model.ContractModel;
+﻿using CodePower.Footmark.DataAccess;
+using CodePower.Footmark.Model.ContractModel;
 using CodePower.Footmark.Model.DomainModel;
 using System;
 using System.Collections.Generic;
@@ -41,21 +42,25 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             #endregion check input data
 
             #region check the 'refreshToken'
-            //[TO DO]:var consumer = this.dashboardDA.FeachAuthenticateConsumer(consumerKey, consumerSecret);
-            var consumer = new AuthConsumerDM();
+            var dataVisitor = DataVisitor.Create<IUserDataVisitor>();
+            var consumer = dataVisitor.FeachAuthConsumer(consumerKey, consumerSecret);
+
             if (consumer == null)
             {
                 //[TO DO]://throw new BusinessException("Can not find consumer information with 'consumerKey' & 'consumerSecret'!");
+                throw new Exception("Can not find consumer information with 'consumerKey' & 'consumerSecret'!");
             }
             if (consumer.IsEnabled == false)
             {
                 //[TO DO]://throw new BusinessException("Your consumer is disabled!");
+                throw new Exception("Your consumer is disabled!");
             }
 
             var token = consumer.Tokens.FirstOrDefault(x => x.RefreshToken == refreshToken);
             if (token == null)
             {
                 //[TO DO]:throw new BusinessException("Your refresh token is disabled!");
+                throw new Exception("Your refresh token is disabled!");
             }
             #endregion check the 'refreshToken'
 
@@ -63,11 +68,12 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             token.AccessToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "AccessToken");
             token.RefreshToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "RefreshToken");
             token.ExpirationTime = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
-            //token.LastUpdatedByUserId = 0;
-            //token.LastUpdatedByUserName = "System User";
-            //token.LastUpdatedDate = DateTime.Now;
+            token.UpdateUserSysNo = -1;
+            token.UpdateUserName = "System User";
+            token.UpdateTime = DateTime.Now;
 
-            //[TO DO]:this.dashboardDA.UpdateAuthenticateToken(token);
+            dataVisitor.UpdateAuthToken(token); //update token.
+            
             return new
             {
                 TokenType = "bearer",

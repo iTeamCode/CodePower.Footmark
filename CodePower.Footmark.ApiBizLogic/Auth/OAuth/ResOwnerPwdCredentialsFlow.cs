@@ -35,15 +35,19 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             var user = factory.AuthenticationUser(_model.UserName, _model.Password, _model.ChurchCode);
 
             var token = consumer.Tokens.FirstOrDefault(x => x.UserSysNo == user.UserSysNo);
-            if (token != null && token.ExpirationTime < DateTime.Now)
-            {   //Refresh token.
-                token.AccessToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "AccessToken");
-                token.RefreshToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "RefreshToken");
-                token.ExpirationTime = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
-                token.UpdateUserSysNo = -1;
-                token.UpdateUserName = "System User";
-                token.UpdateTime = DateTime.Now;
-                dataVisitor.UpdateAuthToken(token);
+            if (token != null)
+            {
+                if (token.ExpirationTime < DateTime.Now)
+                {   
+                    //Refresh token.
+                    token.AccessToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "AccessToken");
+                    token.RefreshToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "RefreshToken");
+                    token.ExpirationTime = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
+                    token.UpdateUserSysNo = -1;
+                    token.UpdateUserName = "System User";
+                    token.UpdateTime = DateTime.Now;
+                    dataVisitor.UpdateAuthToken(token);
+                }
             }
             else
             {   //Create Token.
