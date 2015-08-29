@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace CodePower.Footmark.DataAccess
 {
-    public interface IActivityDataVisitor : IDataVisitor
+    public interface IDataVisitor
     {
+        CurrentUserDM CurrentUser { get; set; }
     }
 }

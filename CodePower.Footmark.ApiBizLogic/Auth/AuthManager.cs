@@ -1,4 +1,5 @@
-﻿using CodePower.Footmark.Model.ContractModel;
+﻿using CodePower.Footmark.DataAccess;
+using CodePower.Footmark.Model.ContractModel;
 using CodePower.Footmark.Model.DomainModel;
 using System;
 using System.Collections.Generic;
@@ -14,22 +15,23 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
         /// <summary>
         /// CreateAuthFactory
         /// </summary>
-        /// <param name="token"></param>
-        /// <param name="userFactory"></param>
-        /// <returns></returns>
+        /// <param name="token">token</param>
+        /// <param name="userFactory">user factory</param>
+        /// <returns>is create</returns>
         public bool CreateAuthUserFactory(string token, out AuthUserFactory userFactory, out int userId)
         {
             bool authPass = false;
             userFactory = null;
             userId = 0;
-            //[TO DO]:AuthTokenDM authToken = this.dashboardDA.FetchAuthorizationAccessToken(token);
-            AuthTokenDM authToken = new AuthTokenDM();
+
+            var dataVisitor = DataVisitor.Create<IUserDataVisitor>();
+            AuthTokenDM authToken = dataVisitor.FetchAuthAccessToken(token);
 
             if (authToken == null || authToken.AccessToken != token || authToken.ExpirationDate <= DateTime.Now) return authPass;
             if (authToken.Consumer == null || !authToken.Consumer.IsEnabled) return authPass;
 
             var consumerApp = (ConsumerApp)authToken.Consumer.ConsumerAppID;
-            userFactory = AuthUserFactory.CreateAuthUserFactory(consumerApp);//authToken.UserID
+            userFactory = AuthUserFactory.CreateAuthUserFactory(consumerApp);
             userId = authToken.UserID;
             if (userFactory != null)
             {
@@ -44,7 +46,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
         /// <param name="key">key</param>
         /// <param name="secret">secret</param>
         /// <param name="confusionCode">confusion code</param>
-        /// <returns></returns>
+        /// <returns>token</returns>
         public static string GeneratedToken(string key, string secret, string confusionCode)
         {
             string unencryptedStr = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Ticks, key, secret, confusionCode);
@@ -53,7 +55,11 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             var encryptedStr = BitConverter.ToString(output).Replace("-", "") + Guid.NewGuid();
             return encryptedStr;
         }
-
+        /// <summary>
+        /// Create AuthProcess
+        /// </summary>
+        /// <param name="model">model</param>
+        /// <returns>IOAuth entity</returns>
         public IOAuth CreateAuthProcess(AuthCM model)
         {
             IOAuth flow = null;

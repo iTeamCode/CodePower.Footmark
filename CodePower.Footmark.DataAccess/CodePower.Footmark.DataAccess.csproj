@@ -60,11 +60,16 @@
     <Compile Include="Implementation\ProjectDataVisitor.cs" />
     <Compile Include="Implementation\UserDataVisitor.cs" />
     <Compile Include="Interface\IActivityDataVisitor.cs" />
+    <Compile Include="Interface\IDataVisitor.cs" />
     <Compile Include="Interface\IProjectDataVisitor.cs" />
     <Compile Include="Interface\IUserDataVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CodePower.Footmark.Model\CodePower.Footmark.Model.csproj">
+      <Project>{019b4967-f85a-4fc2-a6d3-07e58ddfa83e}</Project>
+      <Name>CodePower.Footmark.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodePower.Framework\CodePower.Framework.Common\CodePower.Framework.Common.csproj">
       <Project>{c8527e0b-dbbe-4f5d-beb3-46b7351676b2}</Project>
       <Name>CodePower.Framework.Common</Name>

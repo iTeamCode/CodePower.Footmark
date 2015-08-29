@@ -1,4 +1,5 @@
-﻿using CodePower.Framework.Common;
+﻿using CodePower.Footmark.Model.DomainModel;
+using CodePower.Framework.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,30 +13,26 @@ namespace CodePower.Footmark.DataAccess
     /// </summary>
     public class DataVisitor
     {
-        public DataVisitor()
+        /// <summary>
+        /// create data visitor instance.
+        /// </summary>
+        /// <typeparam name="T">instance type which implementing the interface IDataVisitor</typeparam>
+        /// <returns>data visitor instance</returns>
+        public static T Create<T>() where T : IDataVisitor
         {
-            //Ioc...
-            this.ActivityVisitor = IocFactory.CreateObject<IActivityDataVisitor>();
-            this.ProjectVisitor = IocFactory.CreateObject<IProjectDataVisitor>();
-            this.UserVisitor = IocFactory.CreateObject<IUserDataVisitor>();
-
-            //set current user.
-            //this.activityDA.CurrentUser = user;
+            return DataVisitor.Create<T>(null);
         }
-
-        #region DataVisitor
         /// <summary>
-        /// get or set Data visitor for DB 'fmkActivity'
+        /// create data visitor instance.
         /// </summary>
-        public IActivityDataVisitor ActivityVisitor { get; set; }
-        /// <summary>
-        /// get or set Data visitor for DB 'fmkProject'
-        /// </summary>
-        public IProjectDataVisitor ProjectVisitor { get; set; }
-        /// <summary>
-        /// get or set Data visitor for DB 'fmkUser'
-        /// </summary>
-        public IUserDataVisitor UserVisitor { get; set; }
-        #endregion
+        /// <typeparam name="T">instance type which implementing the interface IDataVisitor</typeparam>
+        /// <param name="user">current user</param>
+        /// <returns>data visitor instance</returns>
+        public static T Create<T>(CurrentUserDM user) where T : IDataVisitor
+        {
+            var dataVisitor = IocFactory.CreateObject<T>();
+            dataVisitor.CurrentUser = user;                     //set current user.
+            return dataVisitor;            
+        }
     }
 }

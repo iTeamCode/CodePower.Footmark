@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodePower.Footmark.Model.DomainModel
 {
-    public class AuthTokenDM
+    public class AuthTokenDM : BaseDomainModel
     {
         #region mapping field
         /// <summary>

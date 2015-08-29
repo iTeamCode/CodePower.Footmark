@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodePower.Footmark.DataAccess
 {
-    public interface IProjectDataVisitor
+    public interface IProjectDataVisitor : IDataVisitor
     {
     }
 }

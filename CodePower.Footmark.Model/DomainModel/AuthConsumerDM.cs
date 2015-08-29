@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodePower.Footmark.Model.DomainModel
 {
-    public class AuthConsumerDM
+    public class AuthConsumerDM : BaseDomainModel
     {
         /// <summary>
         /// get or set 'AuthConsumerID'

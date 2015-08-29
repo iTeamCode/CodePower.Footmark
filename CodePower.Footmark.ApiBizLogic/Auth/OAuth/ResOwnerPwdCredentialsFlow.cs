@@ -1,4 +1,5 @@
-﻿using CodePower.Footmark.Model.ContractModel;
+﻿using CodePower.Footmark.DataAccess;
+using CodePower.Footmark.Model.ContractModel;
 using CodePower.Footmark.Model.DomainModel;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,15 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
         {
             _model = model;
         }
-
+        /// <summary>
+        /// Generate access token
+        /// </summary>
+        /// <returns>entity</returns>
         public object GenerateAccessToken()
         {
             //#01[Auth consumer].Get consumer information. 
-            //[TO DO]:var consumer = this.dashboardDA.FeachAuthenticateConsumer(_model.ConsumerKey, _model.ConsumerSecret);
-            var consumer = new AuthConsumerDM();
+            var dataVisitor = DataVisitor.Create<IUserDataVisitor>();
+            var consumer = dataVisitor.FeachAuthConsumer(_model.ConsumerKey, _model.ConsumerSecret);
             if (consumer == null)
             {
                 //throw new BusinessException("Can not get consumer by 'consumerKey' & 'consumerSecret'!");
@@ -31,23 +35,18 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
             var user = factory.AuthenticationUser(_model.UserName, _model.Password, _model.ChurchCode);
 
             var token = consumer.Tokens.FirstOrDefault(x => x.UserID == user.UserId);
-            if (token != null)
-            {
-                if (token.ExpirationDate < DateTime.Now)
-                {
-                    //Refresh token.
-                    token.AccessToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "AccessToken");
-                    token.RefreshToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "RefreshToken");
-                    token.ExpirationDate = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
-                    //token.LastUpdatedByUserId = 0;
-                    //token.LastUpdatedByUserName = "System User";
-                    //token.LastUpdatedDate = DateTime.Now;
-                    //[TO DO]:this.dashboardDA.UpdateAuthenticateToken(token);
-                }
+            if (token != null && token.ExpirationDate < DateTime.Now)
+            {   //Refresh token.
+                token.AccessToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "AccessToken");
+                token.RefreshToken = AuthManager.GeneratedToken(consumer.ConsumerKey, consumer.ConsumerSecret, "RefreshToken");
+                token.ExpirationDate = DateTime.Now.AddDays(Convert.ToDouble(token.ExpirationInterval));
+                token.UpdateUserSysNo = -1;
+                token.UpdateUserName = "System User";
+                token.UpdateTime = DateTime.Now;
+                dataVisitor.UpdateAuthToken(token);
             }
             else
-            {
-                //Create Token.
+            {   //Create Token.
                 token = new AuthTokenDM()
                 {
                     AuthenticateConsumerID = consumer.AuthConsumerID,
@@ -57,15 +56,15 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
                     ExpirationDate = DateTime.Now.AddDays(1),
                     ExpirationInterval = 1,
                     UserID = user.UserId,
-                    Type = 0//,
-                    //CreatedByUserId = 0,
-                    //CreatedByUserName = "System User",
-                    //CreatedDate = DateTime.Now,
-                    //LastUpdatedByUserId = 0,
-                    //LastUpdatedByUserName = "System User",
-                    //LastUpdatedDate = DateTime.Now
+                    Type = 0,
+                    CreateUserSysNo = -1,
+                    CreateUserName = "System User",
+                    CreateTime = DateTime.Now,
+                    UpdateUserSysNo = -1,
+                    UpdateUserName = "System User",
+                    UpdateTime = DateTime.Now
                 };
-                //[TO DO]:this.dashboardDA.CreateAuthenticateToken(token);
+                dataVisitor.CreateAuthToken(token);
             }
 
             return new

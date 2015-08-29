@@ -9,7 +9,7 @@ namespace CodePower.Footmark.Model.DomainModel
     /// <summary>
     /// current user
     /// </summary>
-    public class CurrentUserDM
+    public class CurrentUserDM : BaseDomainModel
     {
         /// <summary>
         /// get or set 'user id'
