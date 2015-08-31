@@ -82,9 +82,7 @@ namespace CodePower.Footmark.ApiService.Controllers
             this._currentUser = new CurrentUserDM()
             {
                 SysNo = user.UserId,
-                UserName = user.UserName,
-                ChurchId = user.ChurchId,
-                ChurchCode = user.ChurchCode
+                UserName = user.UserName
             };
 
             this._consumer = user.Consumer;             //set _consumer

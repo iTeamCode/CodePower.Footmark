@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="ContractModel\AuthCM.cs" />
     <Compile Include="ContractModel\SignInCM.cs" />
+    <Compile Include="ContractModel\UserCM.cs" />
     <Compile Include="DomainModel\AuthConsumerDM.cs" />
     <Compile Include="DomainModel\AuthTokenDM.cs" />
     <Compile Include="DomainModel\BaseDomainModel.cs" />

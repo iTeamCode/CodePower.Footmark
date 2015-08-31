@@ -35,10 +35,6 @@ namespace CodePower.Footmark.Model.ContractModel
         /// get or set 'password'
         /// </summary>
         public string Password { get; set; }
-        /// <summary>
-        /// get or set 'church code'
-        /// </summary>
-        public string ChurchCode { get; set; }
 
         /// <summary>
         /// get or set 'confusion code'

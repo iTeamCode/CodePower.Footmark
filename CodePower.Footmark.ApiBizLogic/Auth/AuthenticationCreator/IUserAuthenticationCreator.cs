@@ -17,8 +17,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
         /// </summary>
         /// <param name="userName">user name</param>
         /// <param name="password">password</param>
-        /// <param name="churchCode">church code</param>
         /// <returns>SignInViewModel</returns>
-        SignInCM AuthenticationUser(string userName, string password, string churchCode);
+        SignInCM AuthenticationUser(string userName, string password);
     }
 }

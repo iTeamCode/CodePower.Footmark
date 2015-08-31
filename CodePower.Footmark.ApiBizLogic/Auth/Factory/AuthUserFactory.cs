@@ -54,7 +54,6 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
 
             authUser.Consumer = this._consumer;
             authUser.User = _userInfoCreator.GetUserInformation(context);
-            context.AuthChurchId = authUser.User.ChurchId;  //set ChurchId here.
             authUser.Authorization = _authorizationCreator.GetUserAuthorization(context);
 
             return authUser;
@@ -64,11 +63,10 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
         /// </summary>
         /// <param name="userName">user name</param>
         /// <param name="password">password</param>
-        /// <param name="churchCode">church code</param>
         /// <returns>sign user model</returns>
-        public SignInCM AuthenticationUser(string userName, string password, string churchCode)
+        public SignInCM AuthenticationUser(string userName, string password)
         {
-            return _authenticationCreator.AuthenticationUser(userName, password, churchCode);
+            return _authenticationCreator.AuthenticationUser(userName, password);
         }
         #endregion
 

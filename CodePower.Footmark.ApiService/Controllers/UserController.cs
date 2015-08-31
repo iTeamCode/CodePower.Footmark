@@ -1,35 +1,26 @@
-﻿using System;
+﻿using CodePower.Footmark.Model.ContractModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-//using System.Web.Mvc;
 
-namespace Dashboard.ApiService.Controllers
+namespace CodePower.Footmark.ApiService.Controllers
 {
-    public class User
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public DateTime CreateDate { get; set; }
-    }
-
-    public class UserController : ApiController
+    public class UserController : BaseController
     {
 
         [HttpPost]
-        public IList<User> SignIn([FromBody]User user)
+        public IList<UserCM> SignIn([FromBody]UserCM user)
         {
-            user.ID = 1;
+            user.SysNo = 1;
             if (user != null)
             {
                 string data = string.Format("['UserName':'{0}','Password','{1}']", user.Name, user.Password);
             }
-            user.CreateDate = DateTime.Now;
-            var users = new List<User>();
+            var users = new List<UserCM>();
             users.Add(user);
-            users.Add(new User() { ID = 2, Name = "Lucas", Password = "888", CreateDate = DateTime.Now.AddDays(10) });
+            users.Add(new UserCM() { SysNo = 2, Name = "Lucas", Password = "888" });
             return users;
         }
 
@@ -37,6 +28,12 @@ namespace Dashboard.ApiService.Controllers
         public bool SignOut([FromBody]int id)
         {
             throw new NotImplementedException();
+        }
+
+        [HttpPost]
+        public bool Create([FromBody]UserCM user)
+        {
+            return true;
         }
 	}
 }

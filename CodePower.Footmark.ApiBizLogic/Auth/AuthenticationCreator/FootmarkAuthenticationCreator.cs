@@ -10,7 +10,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
 {
     public class FootmarkAuthenticationCreator : IUserAuthenticationCreator
     {
-        public SignInCM AuthenticationUser(string userName, string password, string churchCode)
+        public SignInCM AuthenticationUser(string userName, string password)
         {
             //Step 01. Feach user information.
             var dataVisitor = DataVisitor.Create<IUserDataVisitor>();

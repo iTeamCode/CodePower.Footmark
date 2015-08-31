@@ -14,25 +14,14 @@ namespace CodePower.Footmark.ApiService.OAuth2
     {
         private int _id;
         private string _name;
-        private int _churchId;
-        private string _churchCode;
 
         private ConsumerApp _consumer;
         private Dictionary<int, string> _authorization;
 
-        public OAuthIdentity(int id, string name, int churchId, string churchCode)
-        {
-            _id = id;
-            _name = name;
-            _churchId = churchId;
-            _churchCode = churchCode;
-        }
         public OAuthIdentity(AuthUser authUser)
         {
             _id = authUser.User.SysNo;
             _name = authUser.User.UserName;
-            _churchId = authUser.User.ChurchId;
-            _churchCode = authUser.User.ChurchCode;
 
             _consumer = authUser.Consumer;
             _authorization = authUser.Authorization;
@@ -44,19 +33,9 @@ namespace CodePower.Footmark.ApiService.OAuth2
         public int UserId { get { return this._id; } }
 
         /// <summary>
-        /// get 'church Id'
-        /// </summary>
-        public int ChurchId { get { return this._churchId; } }
-
-        /// <summary>
         /// get 'user name'
         /// </summary>
         public string UserName { get { return this._name; } }
-
-        /// <summary>
-        /// get 'church code'
-        /// </summary>
-        public string ChurchCode { get { return this._churchCode; } }
 
         /// <summary>
         /// get 'consumer app'

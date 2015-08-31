@@ -16,16 +16,8 @@ namespace CodePower.Footmark.Model.DomainModel
         /// </summary>
         public int SysNo { get; set; }
         /// <summary>
-        /// get or set 'church Id'
-        /// </summary>
-        public int ChurchId { get; set; }
-        /// <summary>
         /// get or set 'user name'
         /// </summary>
         public string UserName { get; set; }
-        /// <summary>
-        /// get or set 'church code'
-        /// </summary>
-        public string ChurchCode { get; set; }
     }
 }

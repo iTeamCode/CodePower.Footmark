@@ -32,7 +32,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
 
             //#02.Authentication User.
             var factory = AuthUserFactory.CreateAuthUserFactory((ConsumerApp)consumer.ConsumerAppID);
-            var user = factory.AuthenticationUser(_model.UserName, _model.Password, _model.ChurchCode);
+            var user = factory.AuthenticationUser(_model.UserName, _model.Password);
 
             var token = consumer.Tokens.FirstOrDefault(x => x.UserSysNo == user.UserSysNo);
             if (token != null)
