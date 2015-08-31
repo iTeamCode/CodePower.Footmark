@@ -11,6 +11,7 @@ namespace CodePower.Footmark.ApiBizLogic.Auth
     /// </summary>
     public enum ConsumerApp
     {
+        Unknow = 0,
         /// <summary>
         /// Dashboard App
         /// </summary>

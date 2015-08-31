@@ -143,9 +143,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Filter\ExceptionHandlerAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +214,10 @@
     <ProjectReference Include="..\CodePower.Footmark.Model\CodePower.Footmark.Model.csproj">
       <Project>{019b4967-f85a-4fc2-a6d3-07e58ddfa83e}</Project>
       <Name>CodePower.Footmark.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodePower.Framework\CodePower.Framework.Common\CodePower.Framework.Common.csproj">
+      <Project>{c8527e0b-dbbe-4f5d-beb3-46b7351676b2}</Project>
+      <Name>CodePower.Framework.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

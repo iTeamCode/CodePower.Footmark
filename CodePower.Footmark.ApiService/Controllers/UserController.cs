@@ -14,19 +14,9 @@ namespace Dashboard.ApiService.Controllers
         public string Password { get; set; }
         public DateTime CreateDate { get; set; }
     }
+
     public class UserController : ApiController
     {
-
-        //[HttpPost]
-        //public User SignOut(string userName, string password)
-        //{
-        //    //string userName = "userName";
-        //    //string password = "password";
-        //    //string data = string.Format("['UserName':'{0}','Password','{1}']", userName, password);
-        //    //return Json(data);
-
-        //    return new User() { ID = 1, Name = userName, Password = password };
-        //}
 
         [HttpPost]
         public IList<User> SignIn([FromBody]User user)
